@@ -4,7 +4,9 @@ import similarity from "compute-cosine-similarity/lib";
 import { collection, getDocs } from "firebase/firestore";
 
 let embeddings = [];
-let conversation = ["bot: Hola, soy el clon de Orlando. ¿Qué te gustaría saber de mí?"];
+let conversation = [
+  "bot: Hola, soy el clon de Orlando. ¿Qué te gustaría saber de mí?",
+];
 
 async function getEmbeddings() {
   try {
@@ -61,7 +63,7 @@ async function getResponse(query, context) {
       {
         role: "system",
         content: `${process.env.PERSONALITY} You don't make things up. you don't tell lies. Only answer if you have the question has to do with the following information and you only know this: ${context}. Don't answer if you don't know the answer. This is the conversation between you and the user: ${conversation.join(
-          ", "
+          ", ",
         )}.`,
       },
       {
@@ -94,7 +96,7 @@ export default async function handler(req, res) {
 
     await getEmbeddings();
 
-    const promises = embeddings.map(async (element) => {
+    const promises = embeddings.map(async element => {
       const simil = await compare(query, element);
       element.similarity = simil;
       return simil;
@@ -103,11 +105,11 @@ export default async function handler(req, res) {
     await Promise.all(promises);
 
     const newEmbeddings = embeddings.sort(
-      (a, b) => b.similarity - a.similarity
+      (a, b) => b.similarity - a.similarity,
     );
 
     let context = "";
-    newEmbeddings.slice(0, 6).forEach((element) => {
+    newEmbeddings.slice(0, 6).forEach(element => {
       context += element.text + " ";
     });
 
@@ -117,7 +119,7 @@ export default async function handler(req, res) {
     // console.log("");
     // console.log(conversation.join("\n"));
 
-    await getResponse(query, context).then((response) => {
+    await getResponse(query, context).then(response => {
       conversation.push("bot: " + response);
       message = response;
     });
@@ -167,3 +169,7 @@ export default async function handler(req, res) {
   // }
   // res.status(200).json({ message: message });
 }
+
+export const config = {
+  runtime: "edge",
+};

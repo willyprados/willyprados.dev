@@ -16,10 +16,13 @@ const handler = async (req, res) => {
       limit: 1,
     });
     res.status(200).json(recentTracks.body.items[0].track);
-
   } catch (err) {
     console.log("Something went wrong!", err);
   }
 };
 
 export default handler;
+
+export const config = {
+  runtime: "edge",
+};
