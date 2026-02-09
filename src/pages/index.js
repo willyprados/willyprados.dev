@@ -10,10 +10,8 @@ import {
   LanguagueCard,
   LinkedinCard,
   InstagramCard,
-  PlatziCard,
   ProjectsCard,
   Skills,
-  SpotifyCard,
   ThemeCard,
   TimeCard,
   TwitterCard,
@@ -89,7 +87,6 @@ export default function Home() {
           <EnglishCard />
           <EmailCard />
           <InstagramCard />
-          {/* <SpotifyCard /> */}
           <TimeCard />
           <TwitterCard />
           <ClonCard />
