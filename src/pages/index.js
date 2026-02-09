@@ -89,9 +89,9 @@ export default function Home() {
           <EnglishCard />
           <EmailCard />
           <InstagramCard />
-          <SpotifyCard />
-          <TwitterCard />
+          {/* <SpotifyCard /> */}
           <TimeCard />
+          <TwitterCard />
           <ClonCard />
         </div>
       </motion.div>
