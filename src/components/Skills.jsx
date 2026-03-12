@@ -21,12 +21,12 @@ export default function Skills() {
       <SiReact />
       <SiNextdotjs />
       <SiAstro />
-<SiHtml5 />
+      <SiHtml5 />
       <SiCss3 />
       <SiTailwindcss />
-      <SiFigma/>
+      <SiFigma />
       <SiNodedotjs />
-      <SiGit/>
+      <SiGit />
       <SiWordpress />
       <SiSap />
     </div>
