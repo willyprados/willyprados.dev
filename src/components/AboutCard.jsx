@@ -28,19 +28,19 @@ export default function AboutCard() {
         <p className="text-base md:text-lg lg:text-2xl text-white">
           {i18n.language === "es" ? (
             <>
-              Soy <b>desarrolladora frontend</b> con experiencia en <b>React</b>
-              . Soy buena en <b>CSS</b> y <b>HTML</b>, así como en{" "}
-              <b>JavaScript.</b> Me encanta aprender cosas nuevas y experimentar
-              con nuevas tecnologías. Tengo buen ojo para los detalles y siempre
-              pongo todo de mi en mi trabajo.
+              Soy <b>UX Engineer</b> con experiencia en <b>React</b> y{" "}
+              <b>Astro</b>. Soy buena en <b>Figma</b>, <b>CSS</b> y <b>HTML</b>,
+              así como en <b>JavaScript.</b> Me encanta aprender cosas nuevas y
+              experimentar con nuevas tecnologías. Tengo buen ojo para los
+              detalles y siempre pongo todo de mi en mi trabajo.
             </>
           ) : (
             <>
-              I am a <b>frontend developer</b> with experience in <b>React</b>.
-              I&apos;m good at <b>HTML</b> and <b>CSS</b>, as well as{" "}
-              <b>JavaScript</b>. I love learning new things and experimenting
-              with new technologies. I have a good eye for details and I always
-              put my all into my work.
+              I am a <b>UX Engineer</b> with experience in <b>React</b> and{" "}
+              <b>Astro</b>. I&apos;m good at <b>Figma</b>, <b>HTML</b> and{" "}
+              <b>CSS</b>, as well as <b>JavaScript</b>. I love learning new
+              things and experimenting with new technologies. I have a good eye
+              for details and I always put my all into my work.
             </>
           )}
         </p>
